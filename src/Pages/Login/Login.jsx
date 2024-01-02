@@ -1,13 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
+
+    const { signIn} = useContext(AuthContext)
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
     }
     return (
         <div>
@@ -44,7 +54,7 @@ const Login = () => {
                 <div className="mt-5">
                 <button className="w-full  bg-gradient-to-r from-teal-500 to-purple-300 py-3 text-center rounded ">Login Now</button>
                   <div className="flex text-sm justify-between items-center mt-5">
-                    <p className="mt-2">New To The Website? <Link to={'/register'}><span className="btn-link font-medium text-white">Register</span></Link></p>
+                    <p className="mt-2">New To The Website? <Link to={'/signUp'}><span className="btn-link font-medium text-white">Sign Up</span></Link></p>
                     {/* <p className="btn-link cursor-pointer text-white" >Forgot password?</p> */}
                   </div>
                 </div>
