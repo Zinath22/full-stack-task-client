@@ -1,13 +1,13 @@
-
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
-const SignUp = () => {
+
+const AddUser = () => {
 
  
   const { register, handleSubmit,reset,  formState: { errors } } = useForm();
@@ -286,4 +286,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default AddUser;
