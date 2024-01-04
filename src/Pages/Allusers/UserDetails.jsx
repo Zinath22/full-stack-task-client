@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 
@@ -41,7 +41,7 @@ console.log(data);
     
     <div className="flex gap-7 mx-auto">
       {/* <button  className="btn btn-primary">Buy Now</button> */}
-      <button className="btn btn-primary">Buy Now</button>
+   <Link to={"/update"}>   <button className="btn btn-primary">Update</button></Link>
     </div>
   </div>
 </div>

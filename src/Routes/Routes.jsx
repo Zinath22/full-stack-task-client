@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Allusers from "../Pages/Allusers/Allusers";
 import AddUser from "../Pages/AddUser/AddUser";
 import UserDetails from "../Pages/Allusers/UserDetails";
+import Update from "../Pages/Update/Update";
 
   export const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ import UserDetails from "../Pages/Allusers/UserDetails";
          {
           path: '/userDetails/:id',
           element: <UserDetails></UserDetails>
+         },
+         {
+          path: '/update',
+          element: <Update></Update>
          }
       ]
     },
