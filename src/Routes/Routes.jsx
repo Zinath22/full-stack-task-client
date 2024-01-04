@@ -41,7 +41,7 @@ import Update from "../Pages/Update/Update";
           element: <UserDetails></UserDetails>
          },
          {
-          path: '/update',
+          path: '/update/:id',
           element: <Update></Update>
          }
       ]

@@ -397,7 +397,7 @@ const AllUsersCard = () => {
           </Link>
         </div>
       ) : (
-        <p>No data found</p>
+        <p className="text-center mt-5 items-center text-2xl text-red-600">No data found</p>
       )}
     </div>
   );

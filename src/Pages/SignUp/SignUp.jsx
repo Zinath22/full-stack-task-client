@@ -5,13 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { FaGoogle } from "react-icons/fa";
 
 
 const SignUp = () => {
 
  
   const { register, handleSubmit,reset,  formState: { errors } } = useForm();
-  const { createUser,logOut, updateUserProfile } = useContext(AuthContext)
+  const { createUser,logOut,googleLogIn, updateUserProfile } = useContext(AuthContext)
   const navigate = useNavigate();
 
   const onSubmit = data => {
@@ -68,6 +69,29 @@ const SignUp = () => {
                   .catch(error => console.log(error))
           })
          
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogIn()
+      .then((result) => {
+
+        // const loggedInUser = result.user
+        console.log(result.user);
+        const userInfo ={
+          email: result.user?.email,
+          name: result.user?.displayName
+        }
+        axios.post('http://localhost:5000/users', userInfo)
+        .then(res => {
+          console.log(res.data);
+        })
+        // const user = { email };
+        navigate(location?.state ? location.state : "/");
+        // get access token 
+        
+
+      })
+      .catch((error) => console.error(error));
   };
 
     return (
@@ -273,13 +297,14 @@ const SignUp = () => {
                                  </p>
                              </div>
               </form>
-              
-              {/* <div className="space-y-3">
+            
+              <div className="divider">or</div>
+              <div className="space-y-3">
               <button onClick={handleGoogleLogin}
-                 className=" btn-outline btn w-full bg-gradient-to-r  from-pink-500 to-purple-500  py-3 text-center rounded text-white" >
+                 className=" btn-outline btn w-full bg-gradient-to-r  from-teal-500 to-purple-300  py-3 text-center rounded text-white" >
                     <FaGoogle></FaGoogle>
                   Login In With Googleee</button>
-              </div> */}
+              </div>
             </div>
           
         </div>

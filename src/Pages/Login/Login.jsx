@@ -88,16 +88,17 @@
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
-// import { FaGoogle } from "react-icons/fa";
-// import useAxiosPublic from "../../Hook/useAxiosPublic/useAxiosPublic";
+import { FaGoogle } from "react-icons/fa";
+
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 
 const Login = () => {
-    const { signIn, logOut } = useContext(AuthContext);
+    const { signIn,googleLogIn, logOut } = useContext(AuthContext);
     const [error, setError] = useState("");
     const location = useLocation();
     const navigate = useNavigate();
@@ -147,28 +148,28 @@ const Login = () => {
           });
       };
 
-      // const handleGoogleLogin = () => {
-      //   googleLogIn()
-      //     .then((result) => {
+      const handleGoogleLogin = () => {
+        googleLogIn()
+          .then((result) => {
 
-      //       // const loggedInUser = result.user
-      //       console.log(result.user);
-      //       const userInfo ={
-      //         email: result.user?.email,
-      //         name: result.user?.displayName
-      //       }
-      //       axiosPublic.post('/users', userInfo)
-      //       .then(res => {
-      //         console.log(res.data);
-      //       })
-      //       // const user = { email };
-      //       navigate(location?.state ? location.state : "/");
-      //       // get access token 
+            // const loggedInUser = result.user
+            console.log(result.user);
+            const userInfo ={
+              email: result.user?.email,
+              name: result.user?.displayName
+            }
+            axios.post('http://localhost:5000/users', userInfo)
+            .then(res => {
+              console.log(res.data);
+            })
+            // const user = { email };
+            navigate(location?.state ? location.state : "/");
+            // get access token 
             
     
-      //     })
-      //     .catch((error) => console.error(error));
-      // };
+          })
+          .catch((error) => console.error(error));
+      };
 
     return (
         <div>
@@ -211,12 +212,12 @@ const Login = () => {
                 </div>
               </form>
               <div className="divider">or</div>
-              {/* <div className="space-y-3">
+              <div className="space-y-3">
               <button onClick={handleGoogleLogin}
                  className=" btn-outline btn w-full bg-gradient-to-r  from-teal-500 to-purple-300  py-3 text-center rounded text-white" >
                     <FaGoogle></FaGoogle>
                   Login In With Googleee</button>
-              </div> */}
+              </div>
             </div>
          
         </div>
