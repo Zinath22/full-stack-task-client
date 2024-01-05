@@ -212,7 +212,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">How did you hear about this?</span>
                                 </label>
-                                <div className="flex gap-4">
+                                <div className="flex ">
                                   <div className="flex justify-center items-center">
                                   <label className="">
                                         <input type="checkbox" {...register("hear", { required: true })} value="LinkedIn" className="checkbox" />
@@ -259,16 +259,10 @@ const SignUp = () => {
 </div>
 
 <div className="form-control">
-    {/* <label className="label">
-        <span className="label-text">City</span>
-    </label> */}
+  
     <div className="flex gap-4">
       
-      
-        
-       
-
-        {/* Auto-suggested search textbox for State */}
+      {/* Auto-suggested search textbox for State */}
         <div className="flex items-center">
             <label className="mr-2">State:</label>
             <input
@@ -285,9 +279,6 @@ const SignUp = () => {
     </div>
 </div>
 
-
-                
-               
 
                 <div className="mt-5">
                                  <button className="w-full bg-gradient-to-r  from-teal-500 to-purple-300 py-3 text-center rounded text-white">Save</button>

@@ -10,6 +10,7 @@ import Allusers from "../Pages/Allusers/Allusers";
 import AddUser from "../Pages/AddUser/AddUser";
 import UserDetails from "../Pages/Allusers/UserDetails";
 import Update from "../Pages/Update/Update";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ import Update from "../Pages/Update/Update";
         },
         {
           path: '/allUsers',
-          element: <Allusers></Allusers>
+          element:<PrivateRoute> <Allusers></Allusers></PrivateRoute>
         },
         {
             path: '/login',

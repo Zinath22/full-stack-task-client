@@ -174,7 +174,7 @@ const Login = () => {
     return (
         <div>
               <div>
-      {/* <p className="text-center text-amber-400">{error}</p> */}
+     
       
           
             <div className="lg:w-1/2 w-full  my-10  font-bold mx-auto  py-10 px-12 bg-gradient-to-r from-teal-500 to-purple-300 ">
@@ -204,10 +204,10 @@ const Login = () => {
                 </div>
                 <div className="mt-5"></div>
                 <div className="mt-5">
-                <button className="w-full  bg-gradient-to-r from-teal-500 to-purple-300 py-3 text-center rounded text-white">Login Now</button>
+                <button className="w-full  bg-gradient-to-r from-teal-500 to-purple-300 py-3 text-center rounded ">Login Now</button>
                   <div className="flex text-sm justify-between items-center mt-5">
                     <p className="mt-2">New To The Website? <Link to={'/signUp'}><span className="btn-link font-medium text-white">Sign Up</span></Link></p>
-                    {/* <p className="btn-link cursor-pointer text-white" >Forgot password?</p> */}
+                    
                   </div>
                 </div>
               </form>

@@ -327,7 +327,7 @@ const AllUsersCard = () => {
     <div>
       <div>
         {/* Search input for filtering users */}
-        <div className="mb-4">
+        <div className="m-4">
           <input
             type="text"
             placeholder="Search by Name, Email, or Phone"
@@ -344,7 +344,7 @@ const AllUsersCard = () => {
         </div>
 
         {/* Sorting buttons */}
-        <div className="mb-4">
+        <div className="text-center items-center m-4">
           <button className="btn bg-purple-500" onClick={() => handleSort("name")}>
             Sort A-Z
           </button>
