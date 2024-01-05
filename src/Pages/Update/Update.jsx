@@ -16,7 +16,7 @@ const Update = () => {
 const { data: updateUser = [], } = useQuery({
     queryKey: ['updateuser'],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/users/${id}`);
+      const res = await axios.get(`https://full-stack-task-server.vercel.app/users/${id}`);
       return res.data
     }
 
@@ -42,7 +42,7 @@ const { data: updateUser = [], } = useQuery({
       };
      
 
-      const response = await axios.patch(`http://localhost:5000/users/${updateUser._id}`, userInfo);
+      const response = await axios.patch(`https://full-stack-task-server.vercel.app/users/${updateUser._id}`, userInfo);
 
       if (response.data.updated) {
         reset();

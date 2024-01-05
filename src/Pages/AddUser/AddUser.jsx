@@ -36,7 +36,7 @@ const AddUser = () => {
                     photo: data.photoURL
                       
                     }
-              axios.post('http://localhost:5000/users',userInfo)
+              axios.post('https://full-stack-task-server.vercel.app/users',userInfo)
               .then(res => {
                 if(res.data.insertedId){
                     reset();

@@ -10,7 +10,7 @@ const UserDetails = () => {
    const { data, isLoading, isError } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/users/${id}`);
+      const res = await axios.get(`https://full-stack-task-server.vercel.app/users/${id}`);
       return res.data;
       
     },
